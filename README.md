@@ -89,6 +89,7 @@ CONTAINER ID   IMAGE                                            COMMAND         
  - ### If you do not know what to put in for "Host" you can get it by running "ip addr show" in the terminal on your server and looking for "192.168.x.x"
  - ### Check "show all databases" if you plan to use more than one database, this way you will not have to create a new connection for each one.
  - ### The username, password, and database are whatever you put in your .env file.
+ - ### Once your connection is setup you can change the name of the connection if you want, this might be applicable if you're planning to use multiple databases.
 
  ![Input Credentials](./assets/insertCredentials.png)
 
