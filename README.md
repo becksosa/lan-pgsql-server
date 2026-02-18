@@ -43,17 +43,10 @@ services:
       - "5432:5432" 
     volumes:
       - postgres_data:/var/lib/postgresql/data #If you change this path you need to define PGDATA in the .env file to match
-    networks: # Points to a custom network (defined below) - you can delete this if you want it's not 100% necessary
-      - postgres_network
 
 # Define the volume for PostgreSQL data persistence
 volumes:
   postgres_data:
-
-# Define the custom network for PostgreSQL - you can delete this if you want it's not 100% necessary
-networks:
-  postgres_network:
-    driver: bridge
 ```
 ## Define your environment variables
 ```bash
@@ -69,7 +62,7 @@ POSTGRES_DB=IMDb_Movies # Replace with your desired database name (avoid spaces,
 TZ=America/Chicago # Set the timezone to your desired value
 ```
 
-## Start the Docker Container
+## Start the Docker container
 ```bash
 docker-compose up -d
 ```
@@ -103,7 +96,7 @@ CONTAINER ID   IMAGE                                            COMMAND         
 ## In the Database Navigator, right click tables and select "Import data"
 ![Right Click Tables](./assets/tables.png)
 
-## Select "Browse" and Navigate to the csv file you want to import
+## Select "Browse" and navigate to the csv file you want to import
 ![Import CSV](./assets/browseForCSV.png)
 
 ### For the most part, the default settings will be fine - for the movies dataset I changed some of the data types to text because there were data points a high number of characters. 
