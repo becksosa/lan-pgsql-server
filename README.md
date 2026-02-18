@@ -2,7 +2,7 @@
 ## TLDR:
 ### Things you will need before starting:
  - ### A computer with an OS that supports Docker to host the server
- - ### Docker and Docker Compose V1 installed
+ - ### Docker and Docker Compose V1 installed (on the server device)
  - ### A SQL Client on the device you want to query from (I used [DBeaver](https://dbeaver.io/download/))
 ### If you are experienced with Docker and hosting services on your LAN just grab the docker-compose.yml and .env, replace the credentials and you'll be good to go.
 
