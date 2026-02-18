@@ -1,14 +1,14 @@
 # How to Host Your Own Multi-user PostgreSQL Server for Free
 ## TLDR:
 ### Things you will need before starting:
- - ### A computer with an OS that supports Docker (I used [Ubuntu Server](https://ubuntu.com/download/server))
+ - ### A computer with an OS that supports Docker to host the server
  - ### Docker and Docker Compose V1 installed
  - ### A SQL Client on the device you want to query from (I used [DBeaver](https://dbeaver.io/download/))
 ### If you are experienced with Docker and hosting services on your LAN just grab the docker-compose.yml and .env, replace the credentials and you'll be good to go.
 
 ## In-Depth Guide:
 ### This guide is intended for users who want a sandboxed PostgreSQL server for experimental use with a small group of users. It is not designed for production use. It lacks automatic backups, advanced security configurations, and is only accessible via LAN, or remotely through a VPN tunnel. It is an excellent environment for anyone looking to practice SQL queries, database management, and basic PostgreSQL administration without the risks or complexity of a production server.
-### This configuration was tested on [Ubuntu Server](https://ubuntu.com/download/server) and should work on any device which supports [Docker](https://docs.docker.com/) and Docker Compose V1 - that being said, minor details may differ across operating systems.
+### This configuration was tested on [Ubuntu Server](https://ubuntu.com/download/server) and should work on any device that supports [Docker](https://docs.docker.com/) and Docker Compose V1 - that being said, minor details may differ across operating systems.
 ### [DBeaver](https://dbeaver.io/download/) - an open source and feature rich SQL client, is used to access the server, but any SQL client can be used. Before following the tutorial, Docker and Docker Compose V1 must be installed.
 ### I used a [sample database from Kaggle](https://www.kaggle.com/datasets/luizpaulodeoliveira/imdb-project-sql) to demonstrate importing a csv in DBeaver - if you choose to follow along with this database I have included [movies.csv](./movies.csv) and [directors.csv](./directors.csv) in the repo which I extracted from the .sqlite file that's on Kaggle.
 
