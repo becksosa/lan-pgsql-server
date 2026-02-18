@@ -86,7 +86,7 @@ CONTAINER ID   IMAGE                                            COMMAND         
 ![Select PostgreSQL](./assets/selectPostgre.png)
 
 ## Input the relevant credentials
- - ### If you do not know what to put in for "Host" you can get it by running ip addr show in the terminal on your server and looking for "192.168.x.x"
+ - ### If you do not know what to put in for "Host" you can get it by running "ip addr show" in the terminal on your server and looking for "192.168.x.x"
  - ### Check "show all databases" if you plan to use more than one database, this way you will not have to create a new connection for each one
  - ### The username, password, and database are whatever you put in your .env file
 
@@ -99,7 +99,7 @@ CONTAINER ID   IMAGE                                            COMMAND         
 ## Select "Browse" and navigate to the csv file you want to import
 ![Import CSV](./assets/browseForCSV.png)
 
-### For the most part, the default settings will be fine - for the movies dataset I changed some of the data types to text because there were data points a high number of characters. 
+### For the most part, the default settings will be fine - for the movies dataset I changed some of the data types to text because there were data points with a large number of characters. 
 ### If you are using your own dataset you'll just need to be mindful of what data types are appropriate - the menu in the image below is found by clicking "Customize" in the "Tables mapping" section.
 
 ![Customize Data Types](./assets/customizeDataType.png)  
