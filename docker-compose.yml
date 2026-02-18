@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16 # Use the official PostgreSQL image with version 16
+    container_name: postgres_server
+    env_file: # Point to the .env file that has admin username, password, and database name
+      - .env
+    restart: unless-stopped # Restart the container unless it is explicitly stopped
+    ports: # Map the PostgreSQL default port - you can change it if you want
+      - "5432:5432" 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data #If you change this path you need to define PGDATA in the .env file to match
+# Define the volume for PostgreSQL data persistence
+volumes:
+  postgres_data:

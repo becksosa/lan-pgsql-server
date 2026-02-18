@@ -1,0 +1,5 @@
+# Ignore Docker volumes and local Postgres data
+*.log
+*.tmp
+*.swp
+.env
