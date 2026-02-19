@@ -18,7 +18,7 @@ I used a [sample database from Kaggle](https://www.kaggle.com/datasets/luizpaulo
 
 # Configuring and Activating the PostgreSQL Container
 ## Create the container directory
-### I prefer to have a designated docker root directory, but you can choose any location you'd like.
+I prefer to have a designated docker root directory, but you can choose any location you'd like.
 ```bash
 mkdir /docker/postgresql
 ```
@@ -27,9 +27,9 @@ mkdir /docker/postgresql
 ```bash
 nano docker-compose.yml
 ```
- - ### ctrl+V to paste
- - ### ctrl+O to save
- - ### ctrl+X to exit
+ - ctrl+V to paste
+ - ctrl+O to save
+ - ctrl+X to exit
 
 ### [Contents of docker-compose.yml](./docker-compose.yml):
 ```yaml
@@ -81,18 +81,18 @@ CONTAINER ID   IMAGE                                            COMMAND         
 
 
 # Accessing the PostgreSQL Server Via DBeaver Client
-### First - install [DBeaver](https://dbeaver.io/download/) on the device from which you want to query your database.
+First - install [DBeaver](https://dbeaver.io/download/) on the device from which you want to query your database.
 
 ## Connect to your database in DBeaver
-### Database -> Connect to a Database -> Select PostgreSQL
+Database -> Connect to a Database -> Select PostgreSQL
 
 ![Select PostgreSQL](./assets/selectPostgre.png)
 
 ## Input the relevant credentials
- - ### If you do not know what to put in for "Host" you can get it by running "ip addr show" in the terminal on your server and looking for "192.168.x.x"
- - ### Check "show all databases" if you plan to use more than one database, this way you will not have to create a new connection for each one.
- - ### The username, password, and database are whatever you put in your .env file.
- - ### Once your connection is setup you can change the name of the connection if you want, this might be applicable if you're planning to use multiple databases.
+ - If you do not know what to put in for "Host" you can get it by running "ip addr show" in the terminal on your server and looking for "192.168.x.x"
+ - Check "show all databases" if you plan to use more than one database, this way you will not have to create a new connection for each one.
+ - The username, password, and database are whatever you put in your .env file.
+ - Once your connection is setup you can change the name of the connection if you want, this might be applicable if you're planning to use multiple databases.
 
  ![Input Credentials](./assets/insertCredentials.png)
 
@@ -103,16 +103,17 @@ CONTAINER ID   IMAGE                                            COMMAND         
 ## Select "Browse" and navigate to the csv file you want to import.
 ![Import CSV](./assets/browseForCSV.png)
 
-### For the most part, the default settings will be fine - for the movies dataset I changed some of the data types to text because there were data points with a large number of characters. 
-### If you are using your own dataset you'll just need to be mindful of what data types are appropriate - the menu in the image below is found by clicking "Customize" in the "Tables mapping" section.
+For the most part, the default settings will be fine - for the movies dataset I changed some of the data types to text because there were data points with a large number of characters. 
+
+If you are using your own dataset you'll just need to be mindful of what data types are appropriate - the menu in the image below is found by clicking "Customize" in the "Tables mapping" section.
 
 ![Customize Data Types](./assets/customizeDataType.png)  
 
-### Confirm and proceed - repeat this process for any other tables you want to import (for the movies dataset we still have directors.csv).
+Confirm and proceed - repeat this process for any other tables you want to import (for the movies dataset we still have directors.csv).
 
 ## Once your tables are imported, go ahead and start querying!
 ### SQL Editor -> New SQL script
 ![New SQL Script](assets/newSQLScript.png)
 
 # Adding Users
-### To add other users to the database, utilize the SQL scripts in [createUserScripts](./createUserScripts/). These scripts allow you to create users with varying levels of permission who can access the SQL server via your LAN, or remotely using a VPN tunnel. For a more user friendly client I recommend Beekeper Studio, but you can't import a csv without upgrading to the paid version.
+To add other users to the database, utilize the SQL scripts in [createUserScripts](./createUserScripts/). These scripts allow you to create users with varying levels of permission who can access the SQL server via your LAN, or remotely using a VPN tunnel. For a more user friendly client I recommend Beekeper Studio, but you can't import a csv without upgrading to the paid version.
